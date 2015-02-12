@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-get '/' => 'contacts#index'
+get '/:action' => 'contacts#:action'
+get '/emails/new/:contact_id' => 'emails#new'
  resources :contacts do
  resources :numbers
  resources :emails

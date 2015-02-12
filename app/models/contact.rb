@@ -1,3 +1,4 @@
 class Contact < ActiveRecord::Base
-has_many :emails, :numbers 
+has_many :emails 
+has_many :numbers 
 end

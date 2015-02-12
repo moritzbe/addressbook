@@ -1,0 +1,10 @@
+<h1> Create Contact </h1>
+<%= form_for [@contact] do |f| %>
+      <%= f.label :prename %>
+      <%= f.text_field :prename %>
+      <br>
+      <%= f.label :surnamen %>
+      <%= f.text_area :surnamen %>
+      <br>
+      <%= f.submit 'Save' %>
+<%end%>

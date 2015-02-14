@@ -1,26 +1,23 @@
 class EmailsController < ApplicationController
 	def new
   		@contact = Contact.find(params[:contact_id])
-  		@email = @contact.email.new
+  		@email = @contact.emails.new
   	end
 
   	def create
-  		@contacts = Project.find(params[:contact_id])
-  		@email = @contacts.email.new(email_params)
+  		@contact = Contact.find(params[:contact_id])
+  		@email = @contact.emails.new(email_params)
   		if @email.save
-  			redirect_to "/new"
+  			redirect_to "/emails/new/#{params[:contact_id]}"
   		else
   			render "new"
   		end
-  	end
+    end
 
-  	private
-  	def email_params
-  		params.require(:email).permit(:email)
-  	end
-
-
-
+	private
+	def email_params
+		params.require(:email).permit(:email, :contact_id)
+	end
 
 
 

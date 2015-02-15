@@ -1,16 +1,16 @@
 class ContactsController < ApplicationController
-	def index
+	  def index
       @contacts = Contact.create(prename: "Moritz", surnamen: "Berthold")
       @contacts.save
     end
 
-   #  def show
-  	# 	@project = Project.find(params[:id])
-  	# end
+  	def new
+  		@contact = Contact.new
+  	end
 
-	def new
-		@contact = Contact.new
-	end
+    def show
+      @contacts = Contact.search(params[:letter])
+    end
 
 
 

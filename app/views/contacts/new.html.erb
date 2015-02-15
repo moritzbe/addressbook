@@ -8,3 +8,9 @@
       <br>
       <%= f.submit 'Save' %>
 <%end%>
+
+
+<% (97..122).each do |i| %>
+	<%letter = i.chr%>
+	<%=link_to(letter, contact_path(letter)) %>
+<% end %>
